@@ -26,8 +26,8 @@ app.get('/', function (req, res){
 });
 
 app.get('/logout', function (req, res){
-    delete req.session.authorized;
-    delete req.session.steamid;
+    req.logout();
+    res.redirect('/');
 });
 
 app.get('/verify', function (req, res){
