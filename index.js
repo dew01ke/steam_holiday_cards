@@ -8,8 +8,14 @@ var ECT = require('ect');
 var openid = require('openid');
 var session = require('express-session');
 
-var relyingParty = new openid.RelyingParty('http://steam.andrey-volkov.ru/verify', 'http://steam.andrey-volkov.ru', true, false, []);
-var ectRenderer = ECT({ watch: true, root: __dirname + '/views', ext: '.ect', gzip: true });
+var config = {
+    server_ip: 'localhost', //10.135.134.196
+    server_port: 3030,
+    server_domain: 'http://localhost:3030' //http://steam.andrey-volkov.ru
+};
+
+var relyingParty = new openid.RelyingParty(config.server_domain + '/verify', config.server_domain, true, false, []);
+var ect = ECT({ watch: true, root: __dirname + '/views', ext: '.ect', gzip: true });
 
 app.use(session({
     secret: '1234567890QWERTY',
@@ -19,14 +25,14 @@ app.use(session({
 }));
 app.use(express.static('public'));
 app.set('view engine', 'ect');
-app.engine('ect', ectRenderer.render);
+app.engine('ect', ect.render);
 
 app.get('/', function (req, res){
     res.render('layout', {is_logged: req.session.authorized});
 });
 
 app.get('/logout', function (req, res){
-    req.logout();
+    req.session.destroy();
     res.redirect('/');
 });
 
@@ -58,6 +64,6 @@ app.get('/auth', function (req, res){
     });
 });
 
-var server = app.listen(3030, '10.135.134.196', function() {
+var server = app.listen(config.server_port, config.server_ip, function() {
     console.log("Server started.");
 });
