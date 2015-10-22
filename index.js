@@ -9,11 +9,11 @@ var openid = require('openid');
 var session = require('express-session');
 
 var config = {
-    server_ip: 'localhost',
-    //server_ip: '10.135.134.196',
+    //server_ip: 'localhost',
+    server_ip: '10.135.134.196',
     server_port: 3030,
-    server_domain: 'http://localhost:3030'
-    //server_domain: 'http://steam.andrey-volkov.ru'
+    //server_domain: 'http://localhost:3030'
+    server_domain: 'http://steam.andrey-volkov.ru'
 };
 
 var relyingParty = new openid.RelyingParty(config.server_domain + '/verify', config.server_domain, true, false, []);
