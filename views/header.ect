@@ -1,0 +1,53 @@
+<% if @is_logged : %>
+    <style>
+        .navbar-nav > li > a {
+            height: 70px;
+            line-height: 40px;
+            color: #cccccc !important;
+        }
+        .navbar-nav > li > a:hover {
+            color: #eeeeee !important;
+        }
+    </style>
+
+    <nav class="navbar navbar-inverse navbar-static-top" style="background: url(/img/background_hd.png);">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Доступно 10 карточек (<i>1 отправлена</i>)</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span style="padding-right: 10px;">dew01ke</span>
+                            <img width="40" style="border: 2px solid #eee;" src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/32/32799354dccdad5c660bb374e8c9ae73f763b8b8_full.jpg" class="img-circle">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<% else : %>
+    <div class="jumbotron" style="background: url(/img/background_hd.png); color: #eee;">
+        <div class="container">
+            <h1>Добро пожаловать!</h1>
+            <p>Здесь вы можете быстро обменяться карточками текущей распродажи. Чтобы получить карточку, вам необходимо внести любую другую из этого сета. Таким образом, обмен получается 1 к 1. Главное правило: за 1 день нельзя обменивать больше 5 одинаковых карточек. Начните обмениваться прямо сейчас!</p>
+            <a href="/auth"><img class="center-block" src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png"></a>
+        </div>
+    </div>
+<% end %>
