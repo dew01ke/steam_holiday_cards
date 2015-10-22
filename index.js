@@ -35,8 +35,7 @@ app.get('/verify', function (req, res){
         if (!error && result.authenticated) {
             req.session.authorized = true;
             req.session.steamid = result.claimedIdentifier;
-            res.writeHead(302, {Location: 'http://127.0.0.1:3000'});
-            res.end();
+            res.redirect('/');
         } else {
             req.session.authorized = false;
             console.log("auth closed or error");
@@ -59,6 +58,6 @@ app.get('/auth', function (req, res){
     });
 });
 
-var server = app.listen(3000, 'localhost', function() {
+var server = app.listen(3030, '10.135.134.196', function() {
     console.log("Server started.");
 });
