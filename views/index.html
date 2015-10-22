@@ -17,19 +17,31 @@
 
 <body role="document">
 
-<!-- ON NOT LOGGED
-<div class="jumbotron" style="background: url(./img/background_hd.png); color: #eee;">
+<!-- ON NOT LOGGED -->
+<div class="jumbotron" style="background: url(../public/img/background_hd.png); color: #eee;">
     <div class="container">
-        <h1>Добро пожаловать!</h1>
+        <div class="welcome"></div>
         <p>Здесь вы можете быстро обменяться карточками текущей распродажи. Чтобы получить карточку, вам необходимо внести любую другую из этого сета. Таким образом, обмен получается 1 к 1. Главное правило: за 1 день нельзя обменивать больше 5 одинаковых карточек. Начните обмениваться прямо сейчас!</p>
         <a href="#"><img class="center-block" src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png"></a>
     </div>
 </div>
--->
+
 
 <style>
     .navbar {
         background: url(../public/img/background_hd.png);
+    }
+    .logo {
+        background: url(../public/img/logo.png);
+        width: 350px;
+        height: 50px;
+        float: left;
+    }
+    .welcome {
+        margin: 15px 0;
+        background: url(../public/img/logo-l.png);
+        width: 450px;
+        height: 43px;
     }
     .special-img {
         position: relative;
@@ -41,12 +53,33 @@
         padding-top: 0;
         padding-bottom: 0;
     }
+    .jumbotron {
+        background: url(../public/img/background_hd.png);
+        color: #eee;
+    }
+    .sale {
+        text-align: center;
+    }
+    .footer {
+        margin: 20px 0 0 0;
+        background-color: #f5f5f5;
+        height: 50px;
+        line-height: 50px;
+        background: url(../public/img/background_hd.png);
+        color: #eee;
+    }
     .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
         border: none;
     }
+    .table {
+        text-align: center;
+    }
+    td img {
+        margin-bottom: 5px;
+    }
 </style>
 
-<!-- ON LOGGED-->
+<!-- ON LOGGED
 <div class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -56,16 +89,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <!--<a class="navbar-brand" href="#">Steam Holiday Card</a>-->
+
             <div style="background: url(../public/img/logo.png); width: 350px; height: 50px; float: left;">
             </div>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse" id="top-nav">
-            <!--
-            <ul class="nav navbar-nav">
-                <li ><a href="#"><i class="fa fa-home"></i> Home</a></li>
-            </ul>
-            -->
+
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Доступно карточек <span class="badge">12</span></a></li>
                 <li><a href="#">Отправлено <span class="badge">2</span></a></li>
@@ -82,50 +111,51 @@
         </div>
     </div>
 </div>
+-->
 
 <div class="container theme-showcase" role="main">
 
-    <h1 style="text-align: center">Monster Summer Sale 2015</h1>
+    <h1 class="sale">Monster Summer Sale 2015</h1>
 
     <div class="table-responsive borderless">
-        <table class="table" style="text-align: center">
+        <table class="table">
             <tr>
-                <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
+                <td><img  src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
                     <p><button type="button" class="btn btn-success btn-xs">доступно 20</button></p>
                 </td>
-                <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
+                <td><img  src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
                     <p class="label label-default">пока нет</p>
                 </td>
-                <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
+                <td><img  src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
                     <p class="label label-default">пока нет</p>
                 </td>
-                <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
+                <td><img  src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
                     <p class="label label-default">пока нет</p>
                 </td>
-                <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
+                <td><img  src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
                     <p><button type="button" class="btn btn-success btn-xs">доступно 20</button></p>
                 </td>
             </tr>
             <tr>
-                <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
+                <td><img  src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
                     <p class="label label-default">пока нет</p>
                 </td>
-                <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
+                <td><img  src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
                     <p><button type="button" class="btn btn-success btn-xs">доступно 20</button></p>
                 </td>
-                <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
+                <td><img  src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
                     <p class="label label-default">пока нет</p>
                 </td>
-                <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
+                <td><img  src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
                     <p><button type="button" class="btn btn-success btn-xs">доступно 20</button></p>
                 </td>
-                <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
+                <td><img  src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
                     <p><button type="button" class="btn btn-success btn-xs">доступно 20</button></p>
                 </td>
             </tr>
         </table>
     </div>
-	
+
 	<button type="button" class="btn btn-lg btn-success center-block">Предложить обмен</button>
 
     <div class="row">
@@ -144,7 +174,7 @@
     </div>
 </div>
 
-<footer class="footer" style="margin: 20px 0 0 0; background-color: #f5f5f5; height: 50px; line-height: 50px; background: url(../public/img/background_hd.png); color: #eee;">
+<footer class="footer">
     <div class="container">
         <p style="margin: 0;">© 2015 by <a href="http://steamcommunity.com/id/dew01ke/" style="color: #ffffff;" target="_blank">dew01ke</a>. Powered by Steam. </p>
     </div>
