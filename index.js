@@ -2,6 +2,7 @@
 //npm install openid
 //npm install ect
 //npm install mysql
+//npm install steam-webapi
 
 var express = require('express');
 var app = express();
@@ -36,6 +37,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '94volkoff14',
+    //password: 'root',
     database: 'steam_holiday_cards'
 });
 
@@ -62,20 +64,22 @@ app.get('/verify', function (req, res){
             var openid_steamid = /(\d+)/;
             var returned_steamid = result.claimedIdentifier.match(openid_steamid);
 
-            req.session.authorized = true;
-            req.session.steamid = returned_steamid[1];
-            console.log("Log in: " + returned_steamid[1]);
-
             connection.query('SELECT * FROM users WHERE steamid = ?', [returned_steamid[1]], function(err, rows) {
                 if(err) throw err;
 
                 if (rows.length == 0) {
                     console.log('need to insert');
+                    connection.query('INSERT INTO users(steamid, username) VALUES(?, ?)', [returned_steamid[1].toString(), 'lolzkek'], function(err, rows) {
+                        if(err) throw err;
+                    });
                 } else {
                     console.log('need to return');
-                    console.log(rows);
                 }
             });
+
+            req.session.authorized = true;
+            req.session.steamid = returned_steamid[1];
+            req.session.username = 'lolzkek';
 
             res.redirect('/');
         } else {
