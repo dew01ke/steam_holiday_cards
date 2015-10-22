@@ -1,12 +1,14 @@
 //npm install express-session
 //npm install openid
 //npm install ect
+//npm install mysql
 
 var express = require('express');
 var app = express();
 var ECT = require('ect');
 var openid = require('openid');
 var session = require('express-session');
+var mysql = require('mysql');
 
 var config = {
     //server_ip: 'localhost',
@@ -29,6 +31,22 @@ app.use(express.static('public'));
 app.set('view engine', 'ect');
 app.engine('ect', ect.render);
 
+var connection = mysql.createConnection({
+    socketPath: '/var/run/mysqld/mysqld.sock',
+    host: 'localhost',
+    user: 'root',
+    password: '94volkoff14',
+    database: 'steam_holiday_cards'
+});
+
+connection.connect(function(err){
+    if (err) {
+        console.log('Error connecting to Db');
+        return;
+    }
+    console.log('Connection to Db established');
+});
+
 app.get('/', function (req, res){
     res.render('layout', {is_logged: req.session.authorized});
 });
@@ -47,6 +65,17 @@ app.get('/verify', function (req, res){
             req.session.authorized = true;
             req.session.steamid = returned_steamid[1];
             console.log("Log in: " + returned_steamid[1]);
+
+            connection.query('SELECT * FROM users WHERE steamid = ?', [returned_steamid[1]], function(err, rows) {
+                if(err) throw err;
+
+                if (rows.length == 0) {
+                    console.log('need to insert');
+                } else {
+                    console.log('need to return');
+                    console.log(rows);
+                }
+            });
 
             res.redirect('/');
         } else {
