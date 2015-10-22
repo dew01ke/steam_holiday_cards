@@ -28,6 +28,9 @@
 -->
 
 <style>
+    .navbar {
+        background: url(../public/img/background_hd.png);
+    }
     .special-img {
         position: relative;
         top: -5px;
@@ -37,6 +40,9 @@
     .profile-image  {
         padding-top: 0;
         padding-bottom: 0;
+    }
+    .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+        border: none;
     }
 </style>
 
@@ -50,7 +56,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Steam Holiday Card</a>
+            <!--<a class="navbar-brand" href="#">Steam Holiday Card</a>-->
+            <div style="background: url(../public/img/logo.png); width: 350px; height: 50px; float: left;">
+            </div>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse" id="top-nav">
             <!--
@@ -79,7 +87,7 @@
 
     <h1 style="text-align: center">Monster Summer Sale 2015</h1>
 
-    <div class="table-responsive">
+    <div class="table-responsive borderless">
         <table class="table" style="text-align: center">
             <tr>
                 <td><img style="margin-bottom: 5px;" src="http://vignette2.wikia.nocookie.net/steamtradingcards/images/c/cc/Monster_Summer_Sale_Card_01.png/revision/latest?cb=20150612012041" alt="..." class="img-responsive">
