@@ -1,4 +1,4 @@
-//npm install cookie-parser
+//npm install express-session
 //npm install openid
 //npm install ect
 
@@ -8,14 +8,14 @@ var ECT = require('ect');
 var openid = require('openid');
 var session = require('express-session');
 
-var relyingParty = new openid.RelyingParty('http://127.0.0.1:3000/verify', 'http://127.0.0.1:3000', true, false, []);
+var relyingParty = new openid.RelyingParty('http://steam.andrey-volkov.ru/verify', 'http://steam.andrey-volkov.ru', true, false, []);
 var ectRenderer = ECT({ watch: true, root: __dirname + '/views', ext: '.ect', gzip: true });
 
 app.use(session({
     secret: '1234567890QWERTY',
     saveUninitialized: true,
     resave: true,
-    name: 'joba228'
+    name: 'session'
 }));
 app.use(express.static('public'));
 app.set('view engine', 'ect');
