@@ -1,0 +1,48 @@
+.navbar {
+    background: url(../img/background_hd.png);
+}
+.logo {
+    background: url(../img/logo.png);
+    width: 350px;
+    height: 50px;
+    float: left;
+}
+.welcome {
+    margin: 15px 0;
+    background: url(../img/logo-l.png);
+    width: 450px;
+    height: 43px;
+}
+.special-img {
+    position: relative;
+    top: -5px;
+    float: left;
+    left: -5px;
+}
+.profile-image  {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.jumbotron {
+    background: url(../img/background_hd.png);
+    color: #eee;
+}
+.sale {
+    text-align: center;
+}
+.footer {
+    margin: 20px 0 0 0;
+    height: 50px;
+    line-height: 50px;
+    background: url(../img/background_hd.png);
+    color: #eee;
+}
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
+.table {
+    text-align: center;
+}
+td img {
+    margin-bottom: 5px;
+}
