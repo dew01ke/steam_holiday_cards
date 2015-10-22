@@ -9,9 +9,11 @@ var openid = require('openid');
 var session = require('express-session');
 
 var config = {
-    server_ip: 'localhost', //10.135.134.196
+    server_ip: 'localhost',
+    //server_ip: '10.135.134.196',
     server_port: 3030,
-    server_domain: 'http://localhost:3030' //http://steam.andrey-volkov.ru
+    server_domain: 'http://localhost:3030'
+    //server_domain: 'http://steam.andrey-volkov.ru'
 };
 
 var relyingParty = new openid.RelyingParty(config.server_domain + '/verify', config.server_domain, true, false, []);
@@ -39,8 +41,13 @@ app.get('/logout', function (req, res){
 app.get('/verify', function (req, res){
     relyingParty.verifyAssertion(req, function(error, result) {
         if (!error && result.authenticated) {
+            var openid_steamid = /(\d+)/;
+            var returned_steamid = result.claimedIdentifier.match(openid_steamid);
+
             req.session.authorized = true;
-            req.session.steamid = result.claimedIdentifier;
+            req.session.steamid = returned_steamid[1];
+            console.log("Log in: " + returned_steamid[1]);
+
             res.redirect('/');
         } else {
             req.session.authorized = false;
